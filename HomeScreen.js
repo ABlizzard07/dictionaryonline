@@ -1,12 +1,15 @@
 import * as React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Header, TextInput} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, TextInput} from 'react-native';
+import {Header} from 'react-native-elements';
 
 export default class HomeScreen extends React.Component{
     constructor(){
         super();
         this.state = {
           text: '',
-          isSearchPressed: false
+          isSearchPressed: false,
+          definition: '',
+          lexicalCategory: ''
         }
     }
     getWord = async (word) => {
@@ -70,6 +73,10 @@ export default class HomeScreen extends React.Component{
             }}>
                <Text style = {styles.buttonText}>Search</Text>
             </TouchableOpacity>
+
+            <View><Text>Word: {this.state.word}</Text></View>
+            <View><Text>Type: {this.state.lexicalCategory}</Text></View>
+            <View><Text>Definition: {this.state.definition}</Text></View>
 
             </View>
         )

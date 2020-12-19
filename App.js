@@ -15,7 +15,7 @@ export default class App extends React.Component{
 }
 
 var AppNavigator = createSwitchNavigator({
-  
+  HomeScreen: HomeScreen
 })
 
 const AppContainer = createAppContainer(AppNavigator)
